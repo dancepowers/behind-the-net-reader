@@ -1,0 +1,337 @@
+html {
+	box-sizing: border-box;
+	font-family: helvetica;
+	color: #FFF;
+}
+
+*, *::before, *::after {
+	box-sizing: inherit;
+}
+
+* {
+	margin: 0;
+	padding: 0;
+}
+
+html, body {
+	width: 100%;
+	height: 100%;
+	overflow: hidden;
+}
+
+body {
+	position: relative;
+}
+
+#menu-toggle {
+	display: none;
+}
+
+#container {
+	position: fixed;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	overflow: hidden;
+}
+
+#background-site {
+	position: absolute;
+	top: 40px;
+	left: 300px;
+	right: 0;
+	bottom: 0;
+	z-index:1;
+	overflow: scroll;
+	-webkit-overflow-scrolling: touch;	
+
+}
+
+a.site-external:link, a.site-external:visited, a.site-external:active, a.site-external:hover {
+	font-size: 14px;
+	color: #000;
+	text-decoration: none;
+	display: inline-block;
+
+}
+
+a.site-external:hover {
+	color: #999;
+}
+
+#background-site-url {
+	position: absolute;
+	top: 0;
+	left: 300px;
+	right: 0;
+	color: #000;	
+	z-index: 2;
+	padding: 10px 9px 8px 9px;
+}
+
+#background-url {
+
+}
+
+#background-url::after {
+	content: '↗';
+	display: inline-block;
+	margin-left: 10px;
+	margin-top: -2px;
+	vertical-align: top;
+}
+
+#background-url a.site-external {
+	display: inline-block;
+	max-width: 90%;
+	white-space: nowrap;
+	overflow: hidden;
+	text-overflow: ellipsis;
+}
+
+#background-site iframe {
+	width: 100%;
+	height: 100%;
+	border: none;
+}
+
+#menu {
+	position: absolute;
+	top: 0;
+	left: 0;
+	bottom: 0;
+	width: 300px;
+	box-shadow: 0 0 20px rgba(0, 0, 0, .5);
+	z-index: 100;
+	background-color: #000;
+}
+
+#menu-contents {
+	position: absolute;
+	z-index: 11;
+	left: 0px;
+	right: 0;
+	top: 80px;
+	bottom: 0;
+	overflow: auto;
+	-webkit-overflow-scrolling: touch;
+}
+
+#navigation {
+	margin: 0;
+	padding: 20px;
+	list-style-type: none;
+}
+
+h1 {
+	font-weight: normal;
+	font-size: 24px;
+	padding: 20px;
+}
+
+h1 span {
+	display: block;
+}
+
+ul#navigation {
+	
+}
+
+ul#navigation li {
+	width: auto;
+}
+
+a.nav-link:link, a.nav-link:visited, a.nav-link:active, a.nav-link:hover {
+	color: #FFF;
+	text-decoration: none;
+
+	display: inline-block;
+	border-bottom: 1px solid #CCC;
+	padding: 10px 0;
+	font-size: 14px;
+}
+
+a.nav-link:hover {
+	color: #999;
+}
+
+a.nav-link.active::before {
+	content: '→ ';
+	font-size: 14px;
+}
+
+form {
+	display: block;
+	margin: 20px 20px 0 20px;
+}
+
+input {
+	border: none;
+	font-size: 14px;
+	padding: 5px;
+	margin: 0 0 15px 0;
+	width: 100%;
+}
+
+button {
+	border: 1px solid #FFF;
+	background-color: #FFF;
+	padding: 5px 10px;
+	font-size: 16px;
+}
+
+button:hover {
+	background-color: #CCC;
+}
+
+button:active {
+	background-color: #333;
+	color: #FFF;
+}
+
+button.delete-btn {
+	display: none;
+	font-size: 12px;
+	padding: 1px 3px;
+	margin-left: 10px;
+}
+
+body.edit .delete-btn {
+	display: inline;
+}
+
+#done {
+	display: none;
+}
+
+#edit {
+	display: inline;
+}
+
+body.edit #done {
+	display: inline;
+}
+
+body.edit #edit {
+	display: none;
+}
+
+@media only screen and (max-width: 768px) {
+	#menu {
+		width: 40px;
+	}	
+
+	#background-site {
+		left: 40px;
+	}
+
+	#background-site-url {
+		left:  40px;
+	}
+
+	#menu-toggle {
+		display: block;		
+		position: absolute;
+		top: 0;
+		left: 0;
+		width: 100%;
+		height: 150px;
+	}
+
+	.arrow {
+		position: absolute;
+		top: 20px;
+		width: 100%;
+		font-weight: bold;
+		text-align: center;
+	}
+
+	ul#navigation {
+		margin-top: 0;
+	}
+
+	.label {
+		position: absolute;
+		text-transform: uppercase;
+		transform-origin: top left;
+		transform: rotate(270deg);
+		top: 120px;
+		left: 12px;
+		letter-spacing: 2px;
+	}
+
+	h1 {
+		margin: 0;
+		padding: 0;
+		position: absolute;
+		text-transform: uppercase;
+		transform-origin: top left;
+		transform: rotate(270deg);
+		bottom: 0px;
+		left: 12px;
+		letter-spacing: 2px;
+		font-size: 16px;
+		font-weight: normal;
+		white-space: nowrap;
+	}
+
+	h1 span {
+		display: inline;
+	}
+
+	#menu-contents {
+		display: none;
+		position: absolute;
+		z-index: 11;
+		left: 80px;
+		right: 0px;
+		top: 60px;
+		bottom: 0;
+		overflow: auto;
+		padding-right: 60px;
+	}
+
+	.arrow .left {
+		display: none;
+	}
+
+	.arrow .right {
+		display: inline;
+	}
+
+	body.menu-open #menu {
+		width: 80%;		
+	}
+
+
+	body.menu-open .arrow .left {
+		display: inline;
+	}
+
+	body.menu-open .arrow .right {
+		display: none;
+	}
+
+	body.menu-open #menu-contents {
+		display: block;
+	}
+
+	body.menu-open #background-site {
+
+	}
+}
+
+@media only screen and (max-width: 414px) {
+	body.menu-open #menu-contents {
+		left: 40px;		
+		right: 0;
+		padding-right: 20px;
+	}
+
+	#background-url a.site-external {
+		display: inline-block;
+		overflow: hidden;
+		text-overflow: ellipsis;
+	}
+}

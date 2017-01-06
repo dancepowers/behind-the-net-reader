@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+		<title>Reader - Behind the net</title>
+		<meta name="description" content="">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<link rel="stylesheet" href="style.css">
+
+		<script src="js/vendor/jquery-3.1.1.min.js"></script>
+		<script src="js/vendor/Sortable.min.js"></script>
+		<script src="js/reader.js"></script>
+
+	</head>
+	<body>
+		<div id="container">
+			<div id="menu">
+
+				<div id="menu-toggle">
+					<div class="arrow">
+						<span class="left">←</span>
+						<span class="right">→</span>
+					</div>
+					<div class="label">List</div>
+				</div>
+
+				<h1>Behind the net <span>– Reader</span></h1>
+
+				<div id="menu-contents">
+					<form>
+						<input type="text" name="title" placeholder="Title" />
+						<input type="text" name="url" placeholder="URL" />
+						<button id="save">Save</button>
+						<button id="edit" type="button">Edit</button>
+						<button id="done" type="button">Done</button>
+					</form>
+
+					<ul id="navigation">
+					</ul>
+				</div>
+			</div>
+
+			<div id="background-site">
+				<iframe name="backgrnd" id="backgrnd" scrolling="yes"></iframe>
+			</div>
+			<div id="background-site-url">
+				<span id="background-url"></span>
+			</div>
+		</div>
+	</body>
+</html>
