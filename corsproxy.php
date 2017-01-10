@@ -29,7 +29,7 @@ if ( !$url ) {
 
   // @lf get domain from url and keep it around
   $parts = parse_url( $url );
-  $domain = $parts['scheme']."://".$parts['host'];
+  $domain = $parts['scheme']."://".$parts['host']."/";
 
   if ( strtolower($_SERVER['REQUEST_METHOD']) == 'post' ) {
     curl_setopt( $ch, CURLOPT_POST, true );
